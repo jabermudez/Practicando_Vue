@@ -1,0 +1,29 @@
+<template>
+    <div class="text-center mb-3">
+        <h3>Filtrar por continente</h3>
+        <div class="btn-group">
+            <button class="btn btn-dark" @click="filtro('America')">AM</button>
+            <button class="btn btn-dark" @click="filtro('Europe')">EU</button>
+            <button class="btn btn-dark" @click="filtro('Asia')">AS</button>
+            <button class="btn btn-dark" @click="filtro('Oceania')">OC</button>
+            <button class="btn btn-dark" @click="filtro('Africa')">AF</button>
+            <button class="btn btn-dark" @click="filtro('')">ALL</button>
+        </div>
+    </div>
+</template>
+
+<script>
+import { useStore } from 'vuex'
+export default {
+    setup(){
+        const store = useStore()
+
+        const filtro = (region) => {
+            store.dispatch('filtrarRegion', region)
+        }
+
+        return {filtro}
+    }
+}
+</script>
+
