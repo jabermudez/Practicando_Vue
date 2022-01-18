@@ -1,4 +1,4 @@
-# crud_vuerouter_vuex
+# crud-firebase
 
 ## Project setup
 ```
